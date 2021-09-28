@@ -19,5 +19,8 @@ VALUES (4, '10/13/1983', '11 3456-7654', '43522543-5', '94839859000', 'Rua Estad
 INSERT INTO MEDICO(idUsuario,idEspecialidade,idClinica,cnpjMedico,razaoSocial, endClinica)
 VALUES (1,2,1, '86.400.902/0001-30', 'SP Medical Group', 'Av. Barão Limeira, 532, São Paulo, SP'), (2,17,1, '86.400.902/0001-30', 'SP Medical Group', 'Av. Barão Limeira, 532, São Paulo, SP'), (3,16,1, '86.400.902/0001-30', 'SP Medical Group', 'Av. Barão Limeira, 532, São Paulo, SP')
 
-INSERT INTO CONSULTA(idMedico,idPaciente,dataConsulta,situacao)
-VALUES (3,7, '1/20/2020 15:00', 'Realizada'), (1,2, '01/06/2020 10:00', 'Cancelada'), (1,3, '02/07/2020 11:00', 'Realizada'), (1,2, '02/06/2018 10:00', 'Realizada'), (2,4, '02/07/2019 11:00', 'Cancelada'), (3,7, '03/08/2020 15:00', 'Agendada'), (2,4, '03/09/2020 11:00', 'Agendada')
+INSERT INTO SITUACAOCONSULTA(nomeSituacao)
+VALUES ('Realizada'), ('Cancelada'), ('Agendada')
+
+INSERT INTO CONSULTA(idMedico,idPaciente,dataConsulta,idSituacaoConsulta)
+VALUES (3,7, '1/20/2020 15:00',1), (1,2, '01/06/2020 10:00',2), (1,3, '02/07/2020 11:00',1), (1,2, '02/06/2018 10:00',1), (2,4, '02/07/2019 11:00',2), (3,7, '03/08/2020 15:00',3), (2,4, '03/09/2020 11:00',3)

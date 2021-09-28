@@ -31,7 +31,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "SpMedical_WebApi/1.0.0": {
+      "SpMedical_WebAPI/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.6",
@@ -319,10 +319,10 @@
           "WindowsBase": "4.0.0.0"
         },
         "runtime": {
-          "SpMedical_WebApi.dll": {}
+          "SpMedical_WebAPI.dll": {}
         },
         "compile": {
-          "SpMedical_WebApi.dll": {}
+          "SpMedical_WebAPI.dll": {}
         }
       },
       "Humanizer.Core/2.8.26": {
@@ -3348,7 +3348,7 @@
     }
   },
   "libraries": {
-    "SpMedical_WebApi/1.0.0": {
+    "SpMedical_WebAPI/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

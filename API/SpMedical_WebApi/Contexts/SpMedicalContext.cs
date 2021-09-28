@@ -1,11 +1,11 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using SpMedical_WebApi.Domains;
+using SpMedical_WebAPI.Domains;
 
 #nullable disable
 
-namespace SpMedical_WebApi.Contexts
+namespace SpMedical_WebAPI.Contexts
 {
     public partial class SpMedicalContext : DbContext
     {
@@ -23,6 +23,7 @@ namespace SpMedical_WebApi.Contexts
         public virtual DbSet<Especialidade> Especialidades { get; set; }
         public virtual DbSet<Medico> Medicos { get; set; }
         public virtual DbSet<Paciente> Pacientes { get; set; }
+        public virtual DbSet<Situacaoconsultum> Situacaoconsulta { get; set; }
         public virtual DbSet<Tipousuario> Tipousuarios { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
 
@@ -42,14 +43,14 @@ namespace SpMedical_WebApi.Contexts
             modelBuilder.Entity<Clinica>(entity =>
             {
                 entity.HasKey(e => e.IdClinica)
-                    .HasName("PK__CLINICA__C73A60552D146CC9");
+                    .HasName("PK__CLINICA__C73A6055CDC6DF9B");
 
                 entity.ToTable("CLINICA");
 
-                entity.HasIndex(e => e.NomeClinica, "UQ__CLINICA__2F80697A59D59E8F")
+                entity.HasIndex(e => e.NomeClinica, "UQ__CLINICA__2F80697AEFD7AF3D")
                     .IsUnique();
 
-                entity.HasIndex(e => e.EndClinica, "UQ__CLINICA__46E251D0362E810A")
+                entity.HasIndex(e => e.EndClinica, "UQ__CLINICA__46E251D0FB281EC7")
                     .IsUnique();
 
                 entity.Property(e => e.IdClinica)
@@ -92,7 +93,7 @@ namespace SpMedical_WebApi.Contexts
             modelBuilder.Entity<Consultum>(entity =>
             {
                 entity.HasKey(e => e.IdConsulta)
-                    .HasName("PK__CONSULTA__CA9C61F5E5CA1831");
+                    .HasName("PK__CONSULTA__CA9C61F57D45C803");
 
                 entity.ToTable("CONSULTA");
 
@@ -110,27 +111,28 @@ namespace SpMedical_WebApi.Contexts
 
                 entity.Property(e => e.IdPaciente).HasColumnName("idPaciente");
 
-                entity.Property(e => e.Situacao)
-                    .IsRequired()
-                    .HasMaxLength(10)
-                    .IsUnicode(false)
-                    .HasColumnName("situacao");
+                entity.Property(e => e.IdSituacaoConsulta).HasColumnName("idSituacaoConsulta");
 
                 entity.HasOne(d => d.IdMedicoNavigation)
                     .WithMany(p => p.Consulta)
                     .HasForeignKey(d => d.IdMedico)
-                    .HasConstraintName("FK__CONSULTA__idMedi__4CA06362");
+                    .HasConstraintName("FK__CONSULTA__idMedi__4E88ABD4");
 
                 entity.HasOne(d => d.IdPacienteNavigation)
                     .WithMany(p => p.Consulta)
                     .HasForeignKey(d => d.IdPaciente)
-                    .HasConstraintName("FK__CONSULTA__idPaci__4D94879B");
+                    .HasConstraintName("FK__CONSULTA__idPaci__4F7CD00D");
+
+                entity.HasOne(d => d.IdSituacaoConsultaNavigation)
+                    .WithMany(p => p.Consulta)
+                    .HasForeignKey(d => d.IdSituacaoConsulta)
+                    .HasConstraintName("FK__CONSULTA__idSitu__5070F446");
             });
 
             modelBuilder.Entity<Especialidade>(entity =>
             {
                 entity.HasKey(e => e.IdEspecialidade)
-                    .HasName("PK__ESPECIAL__40969805AC6425F6");
+                    .HasName("PK__ESPECIAL__4096980580768455");
 
                 entity.ToTable("ESPECIALIDADE");
 
@@ -148,7 +150,7 @@ namespace SpMedical_WebApi.Contexts
             modelBuilder.Entity<Medico>(entity =>
             {
                 entity.HasKey(e => e.IdMedico)
-                    .HasName("PK__MEDICO__4E03DEBAAE6B9DCB");
+                    .HasName("PK__MEDICO__4E03DEBA7BB666F6");
 
                 entity.ToTable("MEDICO");
 
@@ -199,17 +201,17 @@ namespace SpMedical_WebApi.Contexts
             modelBuilder.Entity<Paciente>(entity =>
             {
                 entity.HasKey(e => e.IdPaciente)
-                    .HasName("PK__PACIENTE__F48A08F2A33E8BC5");
+                    .HasName("PK__PACIENTE__F48A08F22600F41B");
 
                 entity.ToTable("PACIENTE");
 
-                entity.HasIndex(e => e.RgPaciente, "UQ__PACIENTE__6A3918E70DDC223B")
+                entity.HasIndex(e => e.RgPaciente, "UQ__PACIENTE__6A3918E77BA17E8A")
                     .IsUnique();
 
-                entity.HasIndex(e => e.TelefonePaciente, "UQ__PACIENTE__8BBE9570531F24E7")
+                entity.HasIndex(e => e.TelefonePaciente, "UQ__PACIENTE__8BBE95703B6358F3")
                     .IsUnique();
 
-                entity.HasIndex(e => e.CpfPaciente, "UQ__PACIENTE__AC2DD370778A63B4")
+                entity.HasIndex(e => e.CpfPaciente, "UQ__PACIENTE__AC2DD37013B6D75F")
                     .IsUnique();
 
                 entity.Property(e => e.IdPaciente)
@@ -257,10 +259,25 @@ namespace SpMedical_WebApi.Contexts
                     .HasConstraintName("FK__PACIENTE__idUsua__44FF419A");
             });
 
+            modelBuilder.Entity<Situacaoconsultum>(entity =>
+            {
+                entity.HasKey(e => e.IdSituacaoConsulta)
+                    .HasName("PK__SITUACAO__7E8503D1BC02FD59");
+
+                entity.ToTable("SITUACAOCONSULTA");
+
+                entity.Property(e => e.IdSituacaoConsulta).HasColumnName("idSituacaoConsulta");
+
+                entity.Property(e => e.NomeSituacao)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("nomeSituacao");
+            });
+
             modelBuilder.Entity<Tipousuario>(entity =>
             {
                 entity.HasKey(e => e.IdTipoUsuario)
-                    .HasName("PK__TIPOUSUA__03006BFF3101C678");
+                    .HasName("PK__TIPOUSUA__03006BFFBA110FF9");
 
                 entity.ToTable("TIPOUSUARIO");
 
@@ -278,11 +295,11 @@ namespace SpMedical_WebApi.Contexts
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__USUARIO__645723A6FB683CB9");
+                    .HasName("PK__USUARIO__645723A6889D9FE7");
 
                 entity.ToTable("USUARIO");
 
-                entity.HasIndex(e => e.EmailUsuario, "UQ__USUARIO__ACC1DD99ED3A0B29")
+                entity.HasIndex(e => e.EmailUsuario, "UQ__USUARIO__ACC1DD99BF5191D5")
                     .IsUnique();
 
                 entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");

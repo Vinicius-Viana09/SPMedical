@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpMedical_WebApi", "SpMedical_WebApi.csproj", "{6952DCC6-3EA7-45FF-B3F0-2369E5D7624D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpMedical_WebAPI", "SpMedical_WebAPI.csproj", "{04EF7B4D-03F1-4DE6-BECE-2341D55EB4D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6952DCC6-3EA7-45FF-B3F0-2369E5D7624D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6952DCC6-3EA7-45FF-B3F0-2369E5D7624D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6952DCC6-3EA7-45FF-B3F0-2369E5D7624D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6952DCC6-3EA7-45FF-B3F0-2369E5D7624D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04EF7B4D-03F1-4DE6-BECE-2341D55EB4D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04EF7B4D-03F1-4DE6-BECE-2341D55EB4D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04EF7B4D-03F1-4DE6-BECE-2341D55EB4D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04EF7B4D-03F1-4DE6-BECE-2341D55EB4D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {0A94469F-FEFC-4338-BFBC-672C5CC8E41F}
+		SolutionGuid = {32F0B486-2642-4762-9BEA-4A3660A57E19}
 	EndGlobalSection
 EndGlobal

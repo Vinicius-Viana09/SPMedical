@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace SpMedical_WebApi.Domains
+namespace SpMedical_WebAPI.Domains
 {
     public partial class Paciente
     {

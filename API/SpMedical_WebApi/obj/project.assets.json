@@ -7363,11 +7363,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\Documents\\Vinicius\\senai\\SP Medical\\API\\SpMedical_WebApi\\SpMedical_WebApi.csproj",
-      "projectName": "SpMedical_WebApi",
-      "projectPath": "C:\\Users\\Usuario\\Documents\\Vinicius\\senai\\SP Medical\\API\\SpMedical_WebApi\\SpMedical_WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\Documents\\Vinicius\\senai\\SP Medical\\API\\SpMedical_WebAPI\\SpMedical_WebAPI.csproj",
+      "projectName": "SpMedical_WebAPI",
+      "projectPath": "C:\\Users\\Usuario\\Documents\\Vinicius\\senai\\SP Medical\\API\\SpMedical_WebAPI\\SpMedical_WebAPI.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\Documents\\Vinicius\\senai\\SP Medical\\API\\SpMedical_WebApi\\obj\\",
+      "outputPath": "C:\\Users\\Usuario\\Documents\\Vinicius\\senai\\SP Medical\\API\\SpMedical_WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
