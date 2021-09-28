@@ -18,6 +18,5 @@ namespace SpMedical_WebAPI.Interfaces
 
         void Deletar(int idPaciente);
 
-        List<Paciente> ListarMinhas(int idPaciente);
     }
 }

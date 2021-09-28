@@ -17,5 +17,7 @@ namespace SpMedical_WebAPI.Interfaces
         void Atualizar(int IdConsulta, Consultum consultaAtualizada);
 
         void Deletar(int IdConsulta);
+
+        List<Consultum> ListarMinhas(int IdConsulta);
     }
 }

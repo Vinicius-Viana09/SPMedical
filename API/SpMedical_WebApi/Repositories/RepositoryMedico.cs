@@ -50,17 +50,7 @@ namespace SpMedical_WebAPI.Repositories
 
         public List<Medico> Listar()
         {
-            throw new NotImplementedException();
-        }
-
-        public List<Medico> ListarMinhas(int idMedico)
-        {
-            return ctx.Consulta
-                .Include(p => p.IdConsultaNavigation.IdTipoEventoNavigation)
-                .Include("IdSituacaoNavigation")
-                .Include(p => p.IdConsultaNavigation.IdInstituicaoNavigation)
-                .Where(p => p.IdMedico == idMedico)
-                .ToList();
+            return ctx.Medicos.ToList();
         }
     }
 }

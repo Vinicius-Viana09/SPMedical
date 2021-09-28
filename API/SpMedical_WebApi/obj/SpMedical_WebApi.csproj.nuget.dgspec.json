@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Documents\\Vinicius\\senai\\SP Medical\\API\\SpMedical_WebAPI\\SpMedical_WebAPI.csproj": {}
+    "C:\\Users\\fic\\Desktop\\SPMedical\\API\\SpMedical_WebApi\\SpMedical_WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Documents\\Vinicius\\senai\\SP Medical\\API\\SpMedical_WebAPI\\SpMedical_WebAPI.csproj": {
+    "C:\\Users\\fic\\Desktop\\SPMedical\\API\\SpMedical_WebApi\\SpMedical_WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Documents\\Vinicius\\senai\\SP Medical\\API\\SpMedical_WebAPI\\SpMedical_WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\fic\\Desktop\\SPMedical\\API\\SpMedical_WebApi\\SpMedical_WebAPI.csproj",
         "projectName": "SpMedical_WebAPI",
-        "projectPath": "C:\\Users\\Usuario\\Documents\\Vinicius\\senai\\SP Medical\\API\\SpMedical_WebAPI\\SpMedical_WebAPI.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Documents\\Vinicius\\senai\\SP Medical\\API\\SpMedical_WebAPI\\obj\\",
+        "projectPath": "C:\\Users\\fic\\Desktop\\SPMedical\\API\\SpMedical_WebApi\\SpMedical_WebAPI.csproj",
+        "packagesPath": "C:\\Users\\fic\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fic\\Desktop\\SPMedical\\API\\SpMedical_WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fic\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

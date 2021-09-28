@@ -1,4 +1,6 @@
-﻿using SpMedical_WebAPI.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using SpMedical_WebAPI.Contexts;
+using SpMedical_WebAPI.Domains;
 using SpMedical_WebAPI.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -9,29 +11,56 @@ namespace SpMedical_WebAPI.Repositories
 {
     public class RepositoryConsulta : IConsulta
     {
+        SpMedicalContext ctx = new SpMedicalContext();
+
         public void Atualizar(int IdConsulta, Consultum consultaAtualizada)
         {
-            throw new NotImplementedException();
+            Consultum consultaBuscada = BuscarPorId(IdConsulta);
+
+            if (consultaAtualizada.IdSituacaoConsulta != null)
+            {
+                consultaBuscada.IdSituacaoConsulta = consultaAtualizada.IdSituacaoConsulta;
+            }
+
+            ctx.Consulta.Update(consultaBuscada);
+
+            ctx.SaveChanges();
         }
 
         public Consultum BuscarPorId(int IdConsulta)
         {
-            throw new NotImplementedException();
+            return ctx.Consulta.FirstOrDefault(e => e.IdConsulta == IdConsulta);
         }
 
         public void Cadastrar(Consultum novaConsulta)
         {
-            throw new NotImplementedException();
+            ctx.Consulta.Add(novaConsulta);
+
+            ctx.SaveChanges();
         }
 
         public void Deletar(int IdConsulta)
         {
-            throw new NotImplementedException();
+            Consultum consultaBuscada = BuscarPorId(IdConsulta);
+
+            ctx.Consulta.Remove(consultaBuscada);
+
+            ctx.SaveChanges();
         }
 
         public List<Consultum> Listar()
         {
-            throw new NotImplementedException();
+            return ctx.Consulta.ToList();
+        }
+
+        public List<Consultum> ListarMinhas(int IdConsulta)
+        {
+            return ctx.Consulta
+                .Include(p => p.IdPacienteNavigation)
+                .Include(p => p.IdPacienteNavigation.IdUsuario)
+                //.Include(p => p.IdPacienteNavigation.IdInstituicaoNavigation)
+                //.Where(p => p.IdPaciente == idPaciente)
+                .ToList();
         }
     }
 }

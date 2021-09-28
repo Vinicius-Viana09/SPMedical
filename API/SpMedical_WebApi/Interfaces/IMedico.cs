@@ -17,7 +17,5 @@ namespace SpMedical_WebAPI.Interfaces
         void Atualizar(int idMedico, Medico medicoAtualizado);
 
         void Deletar(int idMedico);
-
-        List<Medico> ListarMinhas(int idMedico);
     }
 }
