@@ -17,5 +17,7 @@ namespace SpMedical_WebAPI.Interfaces
         void Atualizar(int idUsuario, Usuario usuarioAtualizado);
 
         void Deletar(int idUsuario);
+
+        Usuario Login(string email, string senha);
     }
 }

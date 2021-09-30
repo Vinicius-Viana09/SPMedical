@@ -56,8 +56,10 @@ namespace SpMedical_WebAPI.Repositories
         public List<Consultum> ListarMinhas(int IdConsulta)
         {
             return ctx.Consulta
-                .Include(p => p.IdPacienteNavigation)
-                .Include(p => p.IdPacienteNavigation.IdUsuario)
+                .Include(c => c.IdPacienteNavigation.IdUsuarioNavigation)
+                .Include(c => c.IdMedicoNavigation.IdUsuarioNavigation)
+                .Include(c => c.DataConsulta)
+                .Include("IdSituacaoConsultaNavigation")
                 //.Include(p => p.IdPacienteNavigation.IdInstituicaoNavigation)
                 //.Where(p => p.IdPaciente == idPaciente)
                 .ToList();

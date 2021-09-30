@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SpMedical_WebAPI.Interfaces;
 using SpMedical_WebAPI.Repositories;
@@ -22,6 +23,8 @@ namespace SpMedical_WebAPI.Controller
             _consulta = new RepositoryConsulta();
         }
 
+        //[Authorize(Roles = "2")]
+
         [HttpGet("minhas")] 
         public IActionResult ListarMinhas()
         {
@@ -29,7 +32,7 @@ namespace SpMedical_WebAPI.Controller
             {
                 int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
 
-                return Ok(_consulta.ListarMinhas()
+                return Ok(_consulta.ListarMinhas(idUsuario));
             }
             catch (Exception error)
             {
@@ -40,5 +43,8 @@ namespace SpMedical_WebAPI.Controller
                 });
             }
         }
+
+        //[HttpPost("consultar/{}")]
+        //public IActionResult Consultar()
     }
 }
