@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 1200px;
+    display: flex;
+}
+
+.container_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+    background-color: #ffffff;
+}
+
+.logo_spmedical{
+    display: flex;
+    align-items: center;
+    height: 60px;
+    width: 54;
+}
+
+.nome_site{
+    display: flex;
+    align-items: center;
+    margin: 0px 10px;
+    font-family: 'Montserrat', sans-serif;
+    color: #241717;
+    font-size: 28px;
+    font-weight: bolder;
+}
+
+.menu_header{
+    display: flex;
+    align-items: center;
+    margin: 0px 100px;
+}
+
+.links{
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: #000000;
+    margin: 0px 50px;
+    font-size: 21px;
+    font-weight: bolder;
+}
+
+.perfil{
+    height: 50px;
+    width: 50px;
+    display: flex;
+}
+
+.banner{
+    background-image: url(assets/online-marketing-hIgeoQjS_iE-unsplash\ 1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size: 60px;
+}
+
+.p_banner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.container_consulta{
+    height: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
+    font-size: 40px;
+}
+
+.container_mapa{
+    background-color: #83BEDF;
+    height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div_mapa{
+    display: flex;
+    flex-direction: row;
+}
+
+.mapa{
+    height: 350px;
+    width: 445px;
+}
+
+.endereco{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    font-size: 27px;
+    background-color: #ffffff;
+    height: 105px;
+    width: 480px;
+    border-radius: 64px;
+    margin: auto;
+}
+
+.container_qm_somos{
+    height: 380px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.qm_somos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 118px;
+    width: 580px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.footer{
+    background-color: #81DF99;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 170px;
+}
+
+.div_footer{
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+h3{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    color: #000000;
+    font-weight: bolder;
+}
+
+.p_h3{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #000000;
+    font-weight: bolder;
+}
+
+h4{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    color: #000000;
+    font-weight: bolder;
+    margin: 0px 200px;
+}
+
+.rede_social{
+    display: flex;
+    align-items: center;
+}
+
+.arroba{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #000000;
+    font-weight: bolder;
+}
+
+.instagran{
+    height: 30px;
+    width: 30px;
+}
+
+.container_login{
+    width: 50vw;
+    height: 100vh;
+    background-image: url("assets/national-cancer-institute-701-FJcjLAQ-unsplash\ 1.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.inputs_login{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inputs{
+    height: 38px;
+    width: 250px;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    stroke: #81DF99;
+    stroke-width: 5px;
+    margin: auto;
+}
