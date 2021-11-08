@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container{
@@ -133,11 +134,13 @@ h2{
     justify-content: center;
     color: #000000;
     font-size: 27px;
+    font-weight: bolder;
     background-color: #ffffff;
     height: 105px;
-    width: 480px;
+    width: 495px;
     border-radius: 64px;
     margin: auto;
+    margin-left: 65px;
 }
 
 .container_qm_somos{
@@ -163,6 +166,14 @@ h2{
 
 .footer{
     background-color: #81DF99;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 170px;
+}
+
+.footer_consulta{
+    background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -224,19 +235,51 @@ h4{
     overflow: hidden;
 }
 
+.div_container_login{
+    display: flex;
+}
+
 .inputs_login{
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-left: 268px;
+    margin: auto;
+}
+
+.logo_login{
+    width: 150px;
+    height: 162px;
+    margin-bottom: 30px;
 }
 
 .inputs{
-    height: 38px;
-    width: 250px;
+    height: 63px;
+    width: 450px;
     border-radius: 6px;
     font-family: 'Montserrat', sans-serif;
     font-style: italic;
-    stroke: #81DF99;
+    font-size: 28px;
+    border-top-color: #81DF99;
+    border-bottom-color: #83BEDF;
+    border-left-color: #81DF99;
+    border-right-color: #83BEDF;
+    border-style: solid ;
     stroke-width: 5px;
     margin: auto;
+    margin-top: 30px;
+    padding-left: 2px;
+}
+
+.botao_logar{
+    height: 77px;
+    width: 340px;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 30px;
+    background-color: #83BEDF;
+    color: #ffffff;
+    border-radius: 9px;
+    border: none;
+    margin-top: 50px;
 }
