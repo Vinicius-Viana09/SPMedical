@@ -295,7 +295,7 @@ h4{
 table{
     background-color: #ffffff;
     border-radius: 7px;
-    width: 800px;
+    width: 810px;
     height: 70px;
 }
 
@@ -308,7 +308,7 @@ table{
 .div_buscar{
     display: flex;
     justify-content: space-between;
-    width: 800px;
+    width: 810px;
     margin-bottom: 3px;
 }
 
@@ -320,5 +320,52 @@ table{
 }
 
 th{
+    color: #000000;
+}
+
+.botao_cadastrar_consulta{
+    height: 40px;
+    width: 130px;
+    font-weight: bolder;
     color: #83BEDF;
+    background-color: #ffffff;
+    font-size: 18px;
+    border: none;
+    border-radius: 7px;
+    margin-top: 25px;
+    margin-left: 680px;
+}
+
+select{
+    height: 25px;
+    border-top-color: #81DF99;
+    border-bottom-color: #83BEDF;
+    border-left-color: #81DF99;
+    border-right-color: #83BEDF;
+    border-style: solid ;
+}
+
+.input_cadastrar{
+    height: 25px;
+    border-top-color: #81DF99;
+    border-bottom-color: #83BEDF;
+    border-left-color: #81DF99;
+    border-right-color: #83BEDF;
+    border-style: solid ;
+    stroke-width: 5px;
+    
+}
+
+.div_margin{
+    margin-top: 120px;
+}
+
+.botao_editar{
+    font-weight: bolder;
+    color: #ffffff;
+    background-color: #83BEDF;
+    border: none;
+    width: 50px;
+    height: 20px;
+    border-radius: 3px;
 }
