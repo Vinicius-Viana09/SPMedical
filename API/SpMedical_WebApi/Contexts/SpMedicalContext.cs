@@ -32,7 +32,7 @@ namespace SpMedical_WebAPI.Contexts
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-RJD23R9\\SQLEXPRESS; initial catalog=SP_MEDICAL; user Id=sa; pwd=Senai@132;");
+                optionsBuilder.UseSqlServer("Data Source=NOTE0113E1\\SQLEXPRESS; initial catalog=SP_MEDICAL; user Id=sa; pwd=Senai@132;");
             }
         }
 
@@ -43,14 +43,14 @@ namespace SpMedical_WebAPI.Contexts
             modelBuilder.Entity<Clinica>(entity =>
             {
                 entity.HasKey(e => e.IdClinica)
-                    .HasName("PK__CLINICA__C73A6055CDC6DF9B");
+                    .HasName("PK__CLINICA__C73A6055058D730E");
 
                 entity.ToTable("CLINICA");
 
-                entity.HasIndex(e => e.NomeClinica, "UQ__CLINICA__2F80697AEFD7AF3D")
+                entity.HasIndex(e => e.NomeClinica, "UQ__CLINICA__2F80697AFE47A494")
                     .IsUnique();
 
-                entity.HasIndex(e => e.EndClinica, "UQ__CLINICA__46E251D0FB281EC7")
+                entity.HasIndex(e => e.EndClinica, "UQ__CLINICA__46E251D06115BA1B")
                     .IsUnique();
 
                 entity.Property(e => e.IdClinica)
@@ -93,7 +93,7 @@ namespace SpMedical_WebAPI.Contexts
             modelBuilder.Entity<Consultum>(entity =>
             {
                 entity.HasKey(e => e.IdConsulta)
-                    .HasName("PK__CONSULTA__CA9C61F57D45C803");
+                    .HasName("PK__CONSULTA__CA9C61F526069F7C");
 
                 entity.ToTable("CONSULTA");
 
@@ -132,7 +132,7 @@ namespace SpMedical_WebAPI.Contexts
             modelBuilder.Entity<Especialidade>(entity =>
             {
                 entity.HasKey(e => e.IdEspecialidade)
-                    .HasName("PK__ESPECIAL__4096980580768455");
+                    .HasName("PK__ESPECIAL__4096980593981258");
 
                 entity.ToTable("ESPECIALIDADE");
 
@@ -150,7 +150,7 @@ namespace SpMedical_WebAPI.Contexts
             modelBuilder.Entity<Medico>(entity =>
             {
                 entity.HasKey(e => e.IdMedico)
-                    .HasName("PK__MEDICO__4E03DEBA7BB666F6");
+                    .HasName("PK__MEDICO__4E03DEBA6A650851");
 
                 entity.ToTable("MEDICO");
 
@@ -201,17 +201,17 @@ namespace SpMedical_WebAPI.Contexts
             modelBuilder.Entity<Paciente>(entity =>
             {
                 entity.HasKey(e => e.IdPaciente)
-                    .HasName("PK__PACIENTE__F48A08F22600F41B");
+                    .HasName("PK__PACIENTE__F48A08F2140A3C44");
 
                 entity.ToTable("PACIENTE");
 
-                entity.HasIndex(e => e.RgPaciente, "UQ__PACIENTE__6A3918E77BA17E8A")
+                entity.HasIndex(e => e.RgPaciente, "UQ__PACIENTE__6A3918E7A91992AD")
                     .IsUnique();
 
-                entity.HasIndex(e => e.TelefonePaciente, "UQ__PACIENTE__8BBE95703B6358F3")
+                entity.HasIndex(e => e.TelefonePaciente, "UQ__PACIENTE__8BBE9570AC150E58")
                     .IsUnique();
 
-                entity.HasIndex(e => e.CpfPaciente, "UQ__PACIENTE__AC2DD37013B6D75F")
+                entity.HasIndex(e => e.CpfPaciente, "UQ__PACIENTE__AC2DD37032327BCD")
                     .IsUnique();
 
                 entity.Property(e => e.IdPaciente)
@@ -262,7 +262,7 @@ namespace SpMedical_WebAPI.Contexts
             modelBuilder.Entity<Situacaoconsultum>(entity =>
             {
                 entity.HasKey(e => e.IdSituacaoConsulta)
-                    .HasName("PK__SITUACAO__7E8503D1BC02FD59");
+                    .HasName("PK__SITUACAO__7E8503D11F1C17B4");
 
                 entity.ToTable("SITUACAOCONSULTA");
 
@@ -277,7 +277,7 @@ namespace SpMedical_WebAPI.Contexts
             modelBuilder.Entity<Tipousuario>(entity =>
             {
                 entity.HasKey(e => e.IdTipoUsuario)
-                    .HasName("PK__TIPOUSUA__03006BFFBA110FF9");
+                    .HasName("PK__TIPOUSUA__03006BFFF9E985E7");
 
                 entity.ToTable("TIPOUSUARIO");
 
@@ -295,11 +295,11 @@ namespace SpMedical_WebAPI.Contexts
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__USUARIO__645723A6889D9FE7");
+                    .HasName("PK__USUARIO__645723A606181332");
 
                 entity.ToTable("USUARIO");
 
-                entity.HasIndex(e => e.EmailUsuario, "UQ__USUARIO__ACC1DD99BF5191D5")
+                entity.HasIndex(e => e.EmailUsuario, "UQ__USUARIO__ACC1DD990AB08016")
                     .IsUnique();
 
                 entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");

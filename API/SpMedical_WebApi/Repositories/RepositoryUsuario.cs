@@ -54,7 +54,7 @@ namespace SpMedical_WebAPI.Repositories
 
         public Usuario Login(string email, string senha)
         {
-            return ctx.Usuarios.FirstOrDefault(u => u.EmailUsuario == email && u.SenhaUsuario = senha);
+            return ctx.Usuarios.FirstOrDefault(u => u.EmailUsuario == email && u.SenhaUsuario == senha);
         }
     }
 }

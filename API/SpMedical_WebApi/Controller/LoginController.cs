@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using SpMedical_WebAPI.Domains;
 using SpMedical_WebAPI.Interfaces;
+using SpMedical_WebAPI.Repositories;
 using SpMedical_WebAPI.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace SpMedical_WebAPI.Controller
 
         public LoginController()
         {
-            _usuario = new UsuarioRepository();
+            _usuario = new RepositoryUsuario();
         }
 
         [HttpPost]
