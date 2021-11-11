@@ -125,3 +125,14 @@ C:\Users\49200278850\Desktop\SPMedical\API\SpMedical_WebApi\obj\Debug\net5.0\ref
 C:\Users\49200278850\Desktop\SPMedical\API\SpMedical_WebApi\obj\Debug\net5.0\SpMedical_WebAPI.xml
 C:\Users\49200278850\Desktop\SPMedical\API\SpMedical_WebApi\obj\Debug\net5.0\SpMedical_WebAPI.pdb
 C:\Users\49200278850\Desktop\SPMedical\API\SpMedical_WebApi\obj\Debug\net5.0\SpMedical_WebAPI.genruntimeconfig.cache
+C:\Users\Usuario\Documents\Vinicius\senai\SP Medical\API\SpMedical_WebAPI\bin\Debug\net5.0\SpMedical_WebAPI.xml
+C:\Users\Usuario\Documents\Vinicius\senai\SP Medical\API\SpMedical_WebAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Usuario\Documents\Vinicius\senai\SP Medical\API\SpMedical_WebAPI\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Usuario\Documents\Vinicius\senai\SP Medical\API\SpMedical_WebAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Usuario\Documents\Vinicius\senai\SP Medical\API\SpMedical_WebAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\Usuario\Documents\Vinicius\senai\SP Medical\API\SpMedical_WebAPI\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\Usuario\Documents\Vinicius\senai\SP Medical\API\SpMedical_WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Usuario\Documents\Vinicius\senai\SP Medical\API\SpMedical_WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Usuario\Documents\Vinicius\senai\SP Medical\API\SpMedical_WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Usuario\Documents\Vinicius\senai\SP Medical\API\SpMedical_WebAPI\obj\Debug\net5.0\SpMedical_WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Usuario\Documents\Vinicius\senai\SP Medical\API\SpMedical_WebAPI\obj\Debug\net5.0\SpMedical_WebAPI.xml

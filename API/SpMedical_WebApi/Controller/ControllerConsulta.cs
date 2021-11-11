@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SpMedical_WebAPI.Domains;
 using SpMedical_WebAPI.Interfaces;
 using SpMedical_WebAPI.Repositories;
 using System;
@@ -44,7 +45,48 @@ namespace SpMedical_WebAPI.Controller
             }
         }
 
-        //[HttpPost("consultar/{}")]
-        //public IActionResult Consultar()
+        [HttpPost("consultar/{}")]
+        public IActionResult Consultar(Consultum novaConsulta)
+        {
+            try
+            {
+                _consulta .Cadastrar(novaConsulta);
+                return StatusCode(201);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }      
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Atualizar(int idConsulta, Consultum consultaAtualizada)
+        {
+            try
+            {
+                _consulta.Atualizar(idConsulta, consultaAtualizada);
+
+                return StatusCode(204);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int idConsulta)
+        {
+            try
+            {
+                _consulta.Deletar(idConsulta);
+
+                return StatusCode(204);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
     }
 }
