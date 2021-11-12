@@ -45,7 +45,7 @@ namespace SpMedical_WebAPI.Controller
             }
         }
 
-        [HttpPost("consultar/{}")]
+        [HttpPost("consultar")]
         public IActionResult Consultar(Consultum novaConsulta)
         {
             try
@@ -60,11 +60,11 @@ namespace SpMedical_WebAPI.Controller
         }
 
         [HttpPut("{id}")]
-        public IActionResult Atualizar(int idConsulta, Consultum consultaAtualizada)
+        public IActionResult Atualizar(int idConsulta, Consultum consultaAtualizada, bool solicitaMedico)
         {
             try
             {
-                _consulta.Atualizar(idConsulta, consultaAtualizada);
+                _consulta.Atualizar(idConsulta, consultaAtualizada, solicitaMedico);
 
                 return StatusCode(204);
             }

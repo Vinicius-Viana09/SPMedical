@@ -1,0 +1,1 @@
+Scaffold-DbContext "Data Source=NOTE0113E1\SQLEXPRESS; initial catalog=SP_MEDICAL; user Id=sa; pwd=Senai@132;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Domains -ContextDir Contexts -Context SpMedicalContext

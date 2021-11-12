@@ -14,7 +14,7 @@ namespace SpMedical_WebAPI.Interfaces
 
         void Cadastrar(Consultum novaConsulta);
 
-        void Atualizar(int IdConsulta, Consultum consultaAtualizada);
+        void Atualizar(int IdConsulta, Consultum consultaAtualizada, bool solicitaMedico);
 
         void Deletar(int IdConsulta);
 

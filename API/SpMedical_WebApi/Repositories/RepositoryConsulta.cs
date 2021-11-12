@@ -13,13 +13,23 @@ namespace SpMedical_WebAPI.Repositories
     {
         SpMedicalContext ctx = new SpMedicalContext();
 
-        public void Atualizar(int IdConsulta, Consultum consultaAtualizada)
+        public void Atualizar(int IdConsulta, Consultum consultaAtualizada, bool solicitaMedico)
         {
             Consultum consultaBuscada = BuscarPorId(IdConsulta);
 
-            if (consultaAtualizada.IdSituacaoConsulta != null)
+            if (solicitaMedico)
             {
-                consultaBuscada.IdSituacaoConsulta = consultaAtualizada.IdSituacaoConsulta;
+                if (consultaAtualizada.Descricao != null)
+                {
+                    consultaBuscada.Descricao = consultaAtualizada.Descricao;
+                }
+            }
+            else
+            {
+                if (consultaAtualizada.IdSituacaoConsulta != null)
+                {
+                    consultaBuscada.IdSituacaoConsulta = consultaAtualizada.IdSituacaoConsulta;
+                }
             }
 
             ctx.Consulta.Update(consultaBuscada);

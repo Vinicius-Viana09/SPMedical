@@ -22,5 +22,5 @@ VALUES (1,2,1, '86.400.902/0001-30', 'SP Medical Group', 'Av. Barão Limeira, 532
 INSERT INTO SITUACAOCONSULTA(nomeSituacao)
 VALUES ('Realizada'), ('Cancelada'), ('Agendada')
 
-INSERT INTO CONSULTA(idMedico,idPaciente,dataConsulta,idSituacaoConsulta)
-VALUES (3,7, '1/20/2020 15:00',1), (1,2, '01/06/2020 10:00',2), (1,3, '02/07/2020 11:00',1), (1,2, '02/06/2018 10:00',1), (2,4, '02/07/2019 11:00',2), (3,7, '03/08/2020 15:00',3), (2,4, '03/09/2020 11:00',3)
+INSERT INTO CONSULTA(idMedico,idPaciente,descricao,dataConsulta,idSituacaoConsulta)
+VALUES (3,7,null,'20/01/2020 15:00',1), (1,2,null, '06/01/2020 10:00',2), (1,3,'', '07/02/2020 11:00',1), (1,2,'', '06/02/2018 10:00',1), (2,4,'', '07/02/2019 11:00',2), (3,7,'', '08/03/2020 15:00',3), (2,4,'', '09/03/2020 11:00',3)
