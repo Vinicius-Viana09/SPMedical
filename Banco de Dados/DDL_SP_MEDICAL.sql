@@ -72,3 +72,5 @@ descricao VARCHAR(500),
 idSituacaoConsulta SMALLINT FOREIGN KEY REFERENCES SITUACAOCONSULTA(idSituacaoConsulta)
 );
 GO
+
+drop table USUARIO
