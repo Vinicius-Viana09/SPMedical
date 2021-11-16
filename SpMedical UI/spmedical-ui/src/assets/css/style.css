@@ -66,7 +66,7 @@ header{
 }
 
 .banner{
-    background-image: url(assets/online-marketing-hIgeoQjS_iE-unsplash\ 1.png);
+    background-image: url(../img/img_banner.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 450px;
@@ -228,7 +228,7 @@ h4{
 .container_login{
     width: 50vw;
     height: 100vh;
-    background-image: url("assets/national-cancer-institute-701-FJcjLAQ-unsplash\ 1.png");
+    background-image: url("../img/img_login.png");
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;

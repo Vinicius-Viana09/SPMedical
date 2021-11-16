@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import '../../assets/css/style.css';
 import logo from '../../assets/img/logo.png';
 
-class ConsultaAdm extends Component {
+export default class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -75,7 +75,7 @@ class ConsultaAdm extends Component {
                     <div className="container_login">
 
                     </div>
-                    <div className="inputs_login">
+                    <form className="inputs_login">
                         <Link to="/"><img src={logo} className="logo_login" alt="logo" /></Link>
                         <input
                             className="inputs"
@@ -102,7 +102,6 @@ class ConsultaAdm extends Component {
                             </button>
                         }
 
-
                         {
                             this.state.isLoading === false &&
                             <button
@@ -112,7 +111,7 @@ class ConsultaAdm extends Component {
                                 Logar
                             </button>
                         }
-                    </div>
+                    </form>
                 </div>
             </div>
         )

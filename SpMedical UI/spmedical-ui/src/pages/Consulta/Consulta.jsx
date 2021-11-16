@@ -1,11 +1,12 @@
 import { Component } from "react";
 import '../../assets/css/style.css';
+import { Link } from 'react-router-dom';
 
 import logo from '../../assets/img/logo.png';
 import insta from '../../assets/img/instagran.png'
 import perfil from '../../assets/img/icone.png'
 
-class ConsultaAdm extends Component {
+export default class Consulta extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -13,7 +14,7 @@ class ConsultaAdm extends Component {
             medico: '',
             paciente: '',
             descricao: '',
-            data_e_hora: new Date,
+            data_e_hora: new Date(),
             situcacao: ''
         }
     };

@@ -1,5 +1,7 @@
 import '../../assets/css/style.css';
 
+import { Link } from 'react-router-dom';
+
 import logo from '../../assets/img/logo.png';
 import insta from '../../assets/img/instagran.png'
 import perfil from '../../assets/img/icone.png'

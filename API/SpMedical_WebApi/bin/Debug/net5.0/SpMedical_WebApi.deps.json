@@ -31,7 +31,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "SpMedical_WebAPI/1.0.0": {
+      "SpMedical_WebApi/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.10",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "5.0.10",
@@ -323,10 +323,10 @@
           "WindowsBase": "4.0.0.0"
         },
         "runtime": {
-          "SpMedical_WebAPI.dll": {}
+          "SpMedical_WebApi.dll": {}
         },
         "compile": {
-          "SpMedical_WebAPI.dll": {}
+          "SpMedical_WebApi.dll": {}
         }
       },
       "Humanizer.Core/2.8.26": {
@@ -3421,7 +3421,7 @@
     }
   },
   "libraries": {
-    "SpMedical_WebAPI/1.0.0": {
+    "SpMedical_WebApi/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

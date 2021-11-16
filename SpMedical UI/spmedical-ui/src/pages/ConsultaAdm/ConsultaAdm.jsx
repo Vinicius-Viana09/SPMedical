@@ -1,12 +1,15 @@
 import { Component } from "react";
 import '../../assets/css/style.css';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 import logo from '../../assets/img/logo.png';
 import insta from '../../assets/img/instagran.png'
 import perfil from '../../assets/img/icone.png'
 
 
-class ConsultaAdm extends Component {
+export default class ConsultaAdm extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -14,30 +17,62 @@ class ConsultaAdm extends Component {
             medico: '',
             paciente: '',
             descricao: '',
-            data_e_hora: new Date,
+            dataConsulta: new Date(),
             situcacao: ''
         }
     };
 
     buscarConsulta = () => {
-        axios('http://localhost:5000/api/consultaadm')
-          .then((resposta) => {
-            if (resposta.status === 200) {
-              this.setState({ listaConsultas: resposta.data });
-              console.log(this.state.listaConsultas);
-            }
-          })
-          .catch((erro) => console.log(erro));
-      };
-    
-      atualizaStateCampo = (campo) => {
-        
+        axios('http://localhost:5000/api/ControllerConsulta/minhas')
+            .then((resposta) => {
+                if (resposta.status === 200) {
+                    this.setState({ listaConsultas: resposta.data });
+                    console.log(this.state.listaConsultas);
+                }
+            })
+            .catch((erro) => console.log(erro));
+    };
+
+    atualizaStateCampo = (campo) => {
+
         this.setState({ [campo.target.name]: campo.target.value });
-      };
+    };
 
     componentDidMount() {
         this.buscarConsulta();
     }
+
+    cadastrarEvento = (event) => {
+        event.preventDefault();
+
+        this.setState({ isLoading: true });
+
+        let evento = {
+            nomeMedico: this.state.medico,
+            nomePaciente: this.state.paciente,
+            descricao: this.state.descricao,
+            dataConsulta: new Date(this.state.dataConsulta),
+            situcacao: this.state.situcacaoConsulta
+        };
+
+        axios
+            .post('http://localhost:5000/api/ControllerConsulta/consultar', evento, {
+                headers: {
+                    Authorization: 'Bearer ' + localStorage.getItem('usuario-login'),
+                },
+            })
+            .then((resposta) => {
+                if (resposta.status === 201) {
+                    console.log('Consulta cadastrada!');
+                    this.setState({ isLoading: false });
+                }
+            })
+            .catch((erro) => {
+                console.log(erro);
+                this.setState({ isLoading: false });
+            })
+            .then(this.buscarConsultas);
+    };
 
     render() {
         return (
@@ -51,7 +86,7 @@ class ConsultaAdm extends Component {
                             <a href="#Consulta" class="links">Consulta</a>
                             <a href="#Login" class="links">Login</a>
                         </nav>
-                        <Link><img class="perfil" src={perfil} alt="" /></Link>
+                        <img class="perfil" src={perfil} alt="perfil" />
                     </div>
                 </header>
                 <main>
@@ -59,7 +94,6 @@ class ConsultaAdm extends Component {
                         <div>
                             <div class="div_buscar">
                                 <p class="p_lista">Lista de Consultas</p>
-                                <input class="buscar" type="search" placeholder="Buscar" />
                             </div>
                             <div>
                                 <table>
@@ -80,7 +114,7 @@ class ConsultaAdm extends Component {
                                                     <td>{consulta.idPacienteNavigatio.nomePaciente}</td>
                                                     <td>{consulta.descricao}</td>
                                                     <td>{consulta.dataConsulta}</td>
-                                                    <td>{evento.situcacao}</td>
+                                                    <td>{consulta.idSituacaoConsultaNavigation.nomeSitucacao}</td>
                                                 </tr>
                                             );
                                         })}
@@ -93,30 +127,71 @@ class ConsultaAdm extends Component {
                                 <p class="p_lista">Cadastrar Consulta</p>
                             </div>
                             <div>
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Médico</th>
-                                            <th>Paciente</th>
-                                            <th>Descrição</th>
-                                            <th>Data e Hora</th>
-                                            <th>Situação</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><input type="text" class="input_cadastrar" /></td>
-                                            <td><input type="text" class="input_cadastrar" /></td>
-                                            <td><input type="text" class="input_cadastrar" /></td>
-                                            <td><input type="datetime-local" class="input_cadastrar" /></td>
-                                            <td><select name="" id="">
-                                                <option>Agendada</option>
-                                                <option>Cancelada</option>
-                                                <option>Realizada</option>
-                                            </select></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <form>
+                                    <h2>Cadastro de Eventos</h2>
+                                    <form onSubmit={this.cadastrarEvento}>
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                width: '20vw',
+                                            }}
+                                        >
+                                            <input
+                                                required
+                                                type="text"
+                                                name="nomeMedico"
+                                                value={this.state.nomeMedico}
+                                                onChange={this.atualizaStateCampo}
+                                                placeholder="Médico"
+                                            />
+
+                                            <input
+                                                required
+                                                type="text"
+                                                name="nomePaciente"
+                                                value={this.state.nomePaciente}
+                                                onChange={this.atualizaStateCampo}
+                                                placeholder="Paciente"
+                                            />
+
+                                            <input
+                                                required
+                                                type="text"
+                                                name="descricao"
+                                                value={this.state.descricao}
+                                                onChange={this.atualizaStateCampo}
+                                                placeholder="Descrição da Consulta"
+                                            />
+
+                                            <input
+                                                type="date"
+                                                name="dataEvento"
+                                                value={this.state.dataEvento}
+                                                onChange={this.atualizaStateCampo}
+                                            />
+
+                                            <select
+                                                name="situacao"
+                                                value={this.state.idSitucacaoCosnsulta}
+                                                onChange={this.atualizaStateCampo}
+                                            >
+                                                <option value="">Selecione a situação</option>
+                                                <option value="3">Agendada</option>
+                                                <option value="2">Cancelada</option>
+                                                <option value="1">Realizada</option>
+                                            </select>
+
+                                            {this.state.isLoading === true && (
+                                                <button type="submit">Loading...</button>
+                                            )}
+
+                                            {this.state.isLoading === false && (
+                                                <button type="submit">Cadastrar</button>
+                                            )}
+                                        </div>
+                                    </form>
+                                </form>
                             </div>
                             <button class="botao_cadastrar_consulta" type="submit">Cadastrar</button>
                         </div>
