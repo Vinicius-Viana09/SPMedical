@@ -7539,9 +7539,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\49200278850\\Desktop\\SPMedical\\API\\SpMedical_WebApi\\SpMedical_WebApi.csproj",
-      "projectName": "SpMedical_WebApi",
-      "projectPath": "C:\\Users\\49200278850\\Desktop\\SPMedical\\API\\SpMedical_WebApi\\SpMedical_WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\49200278850\\Desktop\\SPMedical\\API\\SpMedical_WebApi\\SpMedical_WebAPI.csproj",
+      "projectName": "SpMedical_WebAPI",
+      "projectPath": "C:\\Users\\49200278850\\Desktop\\SPMedical\\API\\SpMedical_WebApi\\SpMedical_WebAPI.csproj",
       "packagesPath": "C:\\Users\\49200278850\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\49200278850\\Desktop\\SPMedical\\API\\SpMedical_WebApi\\obj\\",
       "projectStyle": "PackageReference",
@@ -7613,6 +7613,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.12, 5.0.12]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -7621,7 +7627,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
