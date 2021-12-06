@@ -8,31 +8,10 @@ import {
     TextInput,
 } from 'react-native';
 
-// import { 
-//     Montserrat_100Thin,
-//     Montserrat_100Thin_Italic,
-//     Montserrat_200ExtraLight,
-//     Montserrat_200ExtraLight_Italic,
-//     Montserrat_300Light,
-//     Montserrat_300Light_Italic,
-//     Montserrat_400Regular,
-//     Montserrat_400Regular_Italic,
-//     Montserrat_500Medium,
-//     Montserrat_500Medium_Italic,
-//     Montserrat_600SemiBold,
-//     Montserrat_600SemiBold_Italic,
-//     Montserrat_700Bold,
-//     Montserrat_700Bold_Italic,
-//     Montserrat_800ExtraBold,
-//     Montserrat_800ExtraBold_Italic,
-//     Montserrat_900Black,
-//     Montserrat_900Black_Italic 
-//   } from '@expo-google-fonts/montserrat'
+// import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
-import api from '../../services/api';
-import App from '../../../App';
+import api from '../services/api';
+import App from '../../App';
 
 export default class Login extends Component {
 
@@ -67,8 +46,10 @@ export default class Login extends Component {
         return (
 
                 <View style={styles.main}>
+
+                    <Text>Funfou?</Text>
                     <Image
-                        source={require('../../../assets/img/logoLogin.png')}
+                        source={require('../../assets/img/logoLogin.png')}
                         style={styles.mainImgLogin}
                     />
 
