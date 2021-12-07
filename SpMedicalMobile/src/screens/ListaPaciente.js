@@ -4,8 +4,6 @@ import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
 import api from '../services/api';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import { TouchableOpacity } from 'react-native-gesture-handler';
-
 export default class Consultas extends Component {
     constructor(props) {
         super(props);
@@ -40,80 +38,85 @@ export default class Consultas extends Component {
     render() {
         return (
             <View style={styles.main}>
-
-                <View style={styles.mainHeader}>
-                    <View style={styles.mainHeaderRow}>
-                        <Image
-                            source={require('../../assets/img/calendarioAgendada.svg')}
-                            style={styles.mainHeaderImg}
-                        />
-                        <Text style={styles.mainHeaderText}>
-                            Consultas
-                        </Text>
-                    </View>
-                    <View style={styles.mainHeaderLine} />
-                </View>
-
-                <View>
-                    <TouchableOpacity
-                        onPress={this.buscarMinhasConsultas}
-                        styles={secaoConsulta}>
-                        <Text styles={(styles.flatItemTitle, { color: '#65B2DD' })}>
-                            Agendada
-                        </Text>
-                    </TouchableOpacity>
-                    <FlatList
-                        contentContainerStyle={styles.mainBodyContent}
-                        data={this.state.listaMinhasConsultas}
-                        keyExtractor={item => item.idConsulta}
-                        renderItem={this.renderItem}
-                    />
-                </View>
-
+                <Text style={styles.mainHeaderText}>
+                    Consultas
+                </Text>
+                <FlatList
+                    contentContainerStyle={styles.mainBodyContent}
+                    data={this.state.listaMinhasConsultas}
+                    keyExtractor={item => item.idConsulta}
+                    renderItem={this.renderItem}
+                />
             </View>
-
-
         );
     }
 
     renderItem = ({ item }) => (
         <View style={styles.flatItemRow}>
             <View style={styles.flatItemContainer}>
-                <Text style={styles.flatItemTitle}>
-                    {item.idMedicoNavigation.nomeMedico}
-                </Text>
-                <Text style={styles.flatItemInfo}>
-                    {item.idConsultaNavigation.descricao}
-                </Text>
-                <Text style={styles.flatItemInfo}>
-                    {Intl.DateTimeFormat("pt-BR", {
-                        year: 'numeric', month: 'numeric', day: 'numeric',
-                        hour: 'numeric', minute: 'numeric',
-                        hour12: true
-                    }).format(new Date(item.idConsultaNavigation.dataConsulta))}
-                </Text>
-                <Text style={styles.flatItemInfo}>
-                    {item.idSituacaoNavigation.descricao}
-                </Text>
-            </View>
-            <View style={styles.flatItemImg}>
+                <View style={styles.flatItemImg}>
+                    <Image
+                        source={
+                            item.idSituacaoConsulta === 1
+                            && require('../../assets/img/calendarioRealizada.svg'),
+
+                            item.idSituacaoConsulta === 2
+                            && require('../../assets/img/calendarioCancelda.svg'),
+
+                            item.idSituacaoConsulta === 3
+                            && require('../../assets/img/calendarioAgendada.svg')
+                        }
+                        style={styles.flatItemImgIcon}
+                    />
+                    <Text style={styles.flatItemInfo}>
+                        {item.idSituacaoNavigation.nomeSitucao}
+                    </Text>
+                </View>
+                <Text style={styles.flatItemInfo}>{"Paciente: " + item.idPacienteNavigation.idUsuarioNavigation.nomeUsuario}</Text>
+                <Text style={styles.flatItemInfo}>{"Data: " + item.dataConsulta}</Text>
+                <Text style={styles.flatItemInfo}>{item.descricao}</Text>
                 <Image
-                    source={
-                        item.idSituacao === 1
-                            ? require('../../assets/img/calendarioRealizada.svg')
-                            : require('../../assets/img/calendarioAgendada.svg')
-                        // : require('../../assets/img/calendarioCAncelada.svg')
-                    }
-                    style={styles.flatItemImgIcon}
+                    source={require('../../assets/img/logoEditar.png')}
+                    onPress={this.atualizarConsulta}
+                    style={styles.btnAtualizar}
                 />
             </View>
-
-            <Image
-                source={require('../../assets/img/logoEditar.png')}
-                onPress={this.atualizarConsulta}
-                style={styles.btnAtualizar}
-            />
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+
+    main: {
+        backgroundColor: 'linear-gradient(180deg, #81DF99 13.28%, #83BEDF 100%)',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+        height: '100%',
+    },
+
+    mainHeaderText: {
+        color: '#fff',
+        fontSize: 30,
+        marginTop: 40,
+        marginBottom: 30
+    },
+
+    flatItemContainer: {
+        backgroundColor: 'rgba 255,255,255, 0',
+        borderRadius: 15,
+        width: 281,
+        height: 248,
+        justifyContent: 'center'
+    },
+
+    flatItemInfo: {
+        textAlign: 'left',
+        marginLeft: 20
+    },
+
+    btnAtualizar: {
+
+    }
+})
 

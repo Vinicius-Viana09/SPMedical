@@ -40,79 +40,44 @@ export default class Consultas extends Component {
     render() {
         return (
             <View style={styles.main}>
-
-                <View style={styles.mainHeader}>
-                    <View style={styles.mainHeaderRow}>
-                        <Image
-                            source={require('../../assets/img/calendarioAgendada.svg')}
-                            style={styles.mainHeaderImg}
-                        />
-                        <Text style={styles.mainHeaderText}>
-                            Consultas
-                        </Text>
-                    </View>
-                    <View style={styles.mainHeaderLine} />
-                </View>
-
-                <View>
-                    <TouchableOpacity
-                        onPress={this.buscarMinhasConsultas}
-                        styles={secaoConsulta}>
-                        <Text styles={(styles.flatItemTitle, { color: '#65B2DD' })}>
-                            Agendada
-                        </Text>
-                    </TouchableOpacity>
-                    <FlatList
-                        contentContainerStyle={styles.mainBodyContent}
-                        data={this.state.listaMinhasConsultas}
-                        keyExtractor={item => item.idConsulta}
-                        renderItem={this.renderItem}
-                    />
-                </View>
-
+                <Text style={styles.mainHeaderText}>
+                    Consultas
+                </Text>
+                <FlatList
+                    contentContainerStyle={styles.mainBodyContent}
+                    data={this.state.listaMinhasConsultas}
+                    keyExtractor={item => item.idConsulta}
+                    renderItem={this.renderItem}
+                />
             </View>
-
-
         );
     }
 
     renderItem = ({ item }) => (
         <View style={styles.flatItemRow}>
             <View style={styles.flatItemContainer}>
-                <Text style={styles.flatItemTitle}>
-                    {item.idPacienteNavigation.nomePaciente}
-                </Text>
-                <Text style={styles.flatItemInfo}>
-                    {item.idConsultaNavigation.descricao}
-                </Text>
-                <Text style={styles.flatItemInfo}>
-                    {Intl.DateTimeFormat("pt-BR", {
-                        year: 'numeric', month: 'numeric', day: 'numeric',
-                        hour: 'numeric', minute: 'numeric',
-                        hour12: true
-                    }).format(new Date(item.idConsultaNavigation.dataConsulta))}
-                </Text>
-                <Text style={styles.flatItemInfo}>
-                    {item.idSituacaoNavigation.descricao}
-                </Text>
-            </View>
-            <View style={styles.flatItemImg}>
-                <Image
-                    source={
-                        item.idSituacao === 1
-                            ? require('../../assets/img/calendarioRealizada.svg')
-                            : require('../../assets/img/calendarioAgendada.svg')
-                        // : require('../../assets/img/calendarioCAncelada.svg')
-                    }
-                    style={styles.flatItemImgIcon}
-                />
-            </View>
+                <View style={styles.flatItemImg}>
+                    <Image
+                        source={
+                            item.idSituacaoConsulta === 1
+                            && require('../../assets/img/calendarioRealizada.svg'),
 
-            <Image
-                source={require('../../assets/img/logoEditar.png')}
-                onPress={this.atualizarConsulta}
-                style={styles.btnAtualizar}
-            />
+                            item.idSituacaoConsulta === 2
+                            && require('../../assets/img/calendarioCancelda.svg'),
+
+                            item.idSituacaoConsulta === 3
+                            && require('../../assets/img/calendarioAgendada.svg')
+                        }
+                        style={styles.flatItemImgIcon}
+                    />
+                    <Text style={styles.flatItemInfo}>
+                        {item.idSituacaoNavigation.nomeSitucao}
+                    </Text>
+                </View>
+                <Text style={styles.flatItemItem}>{"Medico: " + item.idMedicoNavigation.idUsuarioNavigation.nomeUsuario}</Text>
+                <Text style={styles.flatItemInfo}>{"Data: " + item.dataConsulta}</Text>
+                <Text style={styles.flatItemInfo}>{item.descricao}</Text>
+            </View>
         </View>
     );
 }
