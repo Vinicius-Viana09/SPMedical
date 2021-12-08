@@ -82,3 +82,33 @@ export default class Consultas extends Component {
     );
 }
 
+const styles = StyleSheet.create({
+
+    main: {
+        backgroundColor: 'linear-gradient(180deg, #81DF99 13.28%, #83BEDF 100%)',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+        height: '100%',
+    },
+
+    mainHeaderText: {
+        color: '#fff',
+        fontSize: 30,
+        marginTop: 40,
+        marginBottom: 30
+    },
+
+    flatItemContainer: {
+        backgroundColor: 'rgba 255,255,255, 0',
+        borderRadius: 15,
+        width: 281,
+        height: 248,
+        justifyContent: 'center'
+    },
+
+    flatItemInfo: {
+        textAlign: 'left',
+        marginLeft: 20
+    }
+})

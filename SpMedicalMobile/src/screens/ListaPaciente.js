@@ -116,7 +116,11 @@ const styles = StyleSheet.create({
     },
 
     btnAtualizar: {
-
+        color: '#fff',
+        height: 22,
+        width: 25,
+        marginBottom: 10,
+        marginTop: 5
     }
 })
 
