@@ -116,7 +116,6 @@ C:\Users\49200278850\Desktop\SPMedical\API\SpMedical_WebApi\obj\Debug\net5.0\SpM
 C:\Users\49200278850\Desktop\SPMedical\API\SpMedical_WebApi\obj\Debug\net5.0\SpMedical_WebAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\49200278850\Desktop\SPMedical\API\SpMedical_WebApi\obj\Debug\net5.0\SpMedical_WebAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\49200278850\Desktop\SPMedical\API\SpMedical_WebApi\obj\Debug\net5.0\staticwebassets\SpMedical_WebAPI.StaticWebAssets.Manifest.cache
-C:\Users\49200278850\Desktop\SPMedical\API\SpMedical_WebApi\obj\Debug\net5.0\staticwebassets\SpMedical_WebAPI.StaticWebAssets.xml
 C:\Users\49200278850\Desktop\SPMedical\API\SpMedical_WebApi\obj\Debug\net5.0\scopedcss\bundle\SpMedical_WebAPI.styles.css
 C:\Users\49200278850\Desktop\SPMedical\API\SpMedical_WebApi\obj\Debug\net5.0\SpMedical_WebAPI.RazorTargetAssemblyInfo.cache
 C:\Users\49200278850\Desktop\SPMedical\API\SpMedical_WebApi\obj\Debug\net5.0\SpMedical_WebAPI.csproj.CopyComplete

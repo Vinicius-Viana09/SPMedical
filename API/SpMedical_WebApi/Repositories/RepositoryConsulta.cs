@@ -68,10 +68,8 @@ namespace SpMedical_WebAPI.Repositories
             return ctx.Consulta
                 .Include(c => c.IdPacienteNavigation.IdUsuarioNavigation)
                 .Include(c => c.IdMedicoNavigation.IdUsuarioNavigation)
-                .Include(c => c.DataConsulta)
-                .Include("IdSituacaoConsultaNavigation")
-                //.Include(p => p.IdPacienteNavigation.IdInstituicaoNavigation)
-                //.Where(p => p.IdPaciente == idPaciente)
+                .Include(c => c.IdSituacaoConsultaNavigation)
+                .Where( c => c.IdMedicoNavigation.IdUsuario == IdConsulta || c.IdPacienteNavigation.IdUsuario == IdConsulta )
                 .ToList();
         }
     }

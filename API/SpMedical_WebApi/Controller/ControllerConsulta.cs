@@ -24,7 +24,6 @@ namespace SpMedical_WebAPI.Controller
             _consulta = new RepositoryConsulta();
         }
 
-        //[Authorize(Roles = "2")]
 
         [HttpGet("minhas")] 
         public IActionResult ListarMinhas()
@@ -45,6 +44,7 @@ namespace SpMedical_WebAPI.Controller
             }
         }
 
+        [Authorize(Roles = "3")]
         [HttpPost("consultar")]
         public IActionResult Consultar(Consultum novaConsulta)
         {
@@ -59,6 +59,7 @@ namespace SpMedical_WebAPI.Controller
             }      
         }
 
+        [Authorize(Roles = "1")]
         [HttpPut("{id}")]
         public IActionResult Atualizar(int idConsulta, Consultum consultaAtualizada, bool solicitaMedico)
         {
@@ -74,6 +75,7 @@ namespace SpMedical_WebAPI.Controller
             }
         }
 
+        [Authorize(Roles = "3")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int idConsulta)
         {

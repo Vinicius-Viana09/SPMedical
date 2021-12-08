@@ -12,6 +12,7 @@ import {
 
 import api from '../services/api';
 import App from '../../App';
+import jwtDecode from 'jwt-decode';
 
 export default class Login extends Component {
 
@@ -34,13 +35,18 @@ export default class Login extends Component {
         const token = resposta.data.token;
         await AsyncStorage.setItem('userToken', token);
 
-        if (resposta.status == 200) {
-            this.props.navigation.navigate('');
+        console.warn(jwtDecode(token));
+
+        if (jwtDecode(token).idTipoUsuario == '1') {
+            this.props.navigation.navigate('ListaPaciente');
         }
-
+        if (jwtDecode(token).idTipoUsuario == '2') {
+            this.props.navigation('ListaMedico')
+        }
         console.warn(token);
-
     };
+
+
 
     render() {
         return (
