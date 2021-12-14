@@ -60,13 +60,13 @@ export default class Consultas extends Component {
                     <Image
                         source={
                             item.idSituacaoConsulta === 1
-                            && require('../../assets/img/calendarioRealizada.svg'),
+                            && require('../../assets/img/logoEditar.png')
 
-                            item.idSituacaoConsulta === 2
-                            && require('../../assets/img/calendarioCancelda.svg'),
+                            // item.idSituacaoConsulta === 2
+                            // && require('../../assets/img/calendarioCancelda.svg'),
 
-                            item.idSituacaoConsulta === 3
-                            && require('../../assets/img/calendarioAgendada.svg')
+                            // item.idSituacaoConsulta === 3
+                            // && require('../../assets/img/calendarioAgendada.svg')
                         }
                         style={styles.flatItemImgIcon}
                     />

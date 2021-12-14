@@ -81,6 +81,7 @@ export default class Login extends Component {
                             className="inputs"
                             placeholder="Email"
                             type="email"
+                            onChange={this.atualizaStateCampo}
                             value={this.state.email}
                         />
 

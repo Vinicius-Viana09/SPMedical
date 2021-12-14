@@ -15,9 +15,9 @@ function Home() {
         <Link to="/"><img class="logo_spmedical" src={logo} alt="logo"/></Link>
             <p class="nome_site">Sp Medical Group</p>
             <nav class="menu_header">
-                <a href="#Inicio" class="links">Inicio</a>
-                <a href="#Consulta" class="links">Consulta</a>
-                <a href="#Login" class="links">Login</a>
+                <a href="#Inicio" class="links" >Inicio</a>
+                <Link href="#Consulta" class="links" to="/consultamedico">Consulta</Link>
+                <Link href="#Login" class="links" to="/login">Login</Link>
             </nav>
             <img class="perfil" src={perfil} alt="icone"/>
         </div>

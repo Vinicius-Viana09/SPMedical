@@ -8,7 +8,8 @@ import './index.css';
 import Home from './pages/Home/App'
 import ConsultaAdm from './pages/ConsultaAdm/ConsultaAdm.jsx';
 import Login from './pages/Login/Login.jsx';
-import Consulta from './pages/Consulta/Consulta.jsx';
+import ConsultaMedico from './pages/ConsultaMedico/ConsultaMedico.jsx';
+import ConsultaPaciente from './pages/ConsultaPaciente/ConsultaPaciente.jsx';
 import NotFound from './pages/NotFound/NotFound.jsx';
 
 
@@ -47,28 +48,14 @@ const routing = (
       <Switch>
         <Route exact path="/" component={Home} /> {/* Home */}
         <Route path="/login" component={Login} /> {/* Login */}      
+        <Route path="/ConsultaAdm" component={ConsultaAdm} /> {/* ConsultaAdm */}      
+        <Route path="/ConsultaMedico" component={ConsultaMedico} /> {/* Consulta */}      
         <Route path="/notFound" component={NotFound} /> {/* Not Found */}
         <Redirect to="/notFound" /> {/* Redireciona para Not Found caso não encontre nenhuma rota */}
       </Switch>
     </div>
   </Router>
 );
-
-// const routing = (
-//   <Router>
-//     <div>
-//       <Switch>
-//         <Route exact path="/" componet={Home} /> {/*Home*/}
-//         <PermissaoAdm path="/consultaAdm" componet={ConsultaAdm} /> {/*ConsultaAdm*/}
-//         <PermissaoComum path="/consulta" componet={Consulta} /> {/*Consulta*/}
-//         <Route path="/login" componet={Login} /> {/*Login*/}
-//         <Route path="/notfound" componet={NotFound} /> {/*Not Found*/}
-
-//         <Redirect to="/notFound" />
-//       </Switch>
-//     </div>
-//   </Router>
-// )
 
 
 ReactDOM.render(

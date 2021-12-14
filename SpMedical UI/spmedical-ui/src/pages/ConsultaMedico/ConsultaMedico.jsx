@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/img/logo.png';
 import insta from '../../assets/img/instagran.png'
 import perfil from '../../assets/img/icone.png'
+import { usuarioAutenticado } from "../../services/auth";
 
 export default class Consulta extends Component {
     constructor(props) {
@@ -26,14 +27,14 @@ export default class Consulta extends Component {
         return (
             <div>
                 <header>
-                    <Link><img className ="logo_spmedical" src={logo} alt="logo"/></Link>
-                    <p className ="nome_site">Sp Medical Group</p>
-                    <nav className ="menu_header">
-                    <a href="#Inicio" className ="links">Inicio</a>
-                    <a href="#Consulta" className ="links">Consulta</a>
-                    <a href="#Login" className ="links">Login</a>
+                    <Link><img className="logo_spmedical" src={logo} alt="logo" /></Link>
+                    <p className="nome_site">Sp Medical Group</p>
+                    <nav className="menu_header">
+                        <Link href="#Inicio" className="links" to="/">Inicio</Link>
+                        <Link href="#Consulta" className="links" to="/consultaMedico">Consulta</Link>
+                        <Link href="#Login" className="links" to="/login">Login</Link>
                     </nav>
-                    <Link><img className ="perfil" src={perfil} alt=""/></Link>
+                    <Link><img className="perfil" src={perfil} alt="" /></Link>
                 </header>
 
                 <main>
@@ -42,17 +43,17 @@ export default class Consulta extends Component {
                         <div>
                             <table>
                                 <tr>
-                                    <th>Médico/ Paciente</th>
+                                    <th>Paciente</th>
                                     <th>Descrição</th>
                                     <th>Data e Hora</th>
                                     <th>Situação</th>
                                     <th>Ações</th>
                                 </tr>
                                 <tr>
-                                    <td>a</td>
-                                    <td>b</td>
-                                    <td>c</td>
-                                    <td>d</td>
+                                    <td className="td_listar">a</td>
+                                    <td className="td_listar">b</td>
+                                    <td className="td_listar">c</td>
+                                    <td className="td_listar">d</td>
                                     <td>
                                         <button className="botao_editar">Editar</button>
                                     </td>

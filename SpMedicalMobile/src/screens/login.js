@@ -11,7 +11,6 @@ import {
 // import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import api from '../services/api';
-import App from '../../App';
 import jwtDecode from 'jwt-decode';
 
 export default class Login extends Component {

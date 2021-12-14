@@ -78,22 +78,22 @@ export default class ConsultaAdm extends Component {
         return (
             <div>
                 <header>
-                    <div class="container container_header">
+                    <div className="container container_header">
                         <Link to="/"><img class="logo_spmedical" src={logo} alt="logo" /></Link>
-                        <p class="nome_site">Sp Medical Group</p>
-                        <nav class="menu_header">
-                            <a href="#Inicio" class="links">Inicio</a>
-                            <a href="#Consulta" class="links">Consulta</a>
-                            <a href="#Login" class="links">Login</a>
+                        <p className="nome_site">Sp Medical Group</p>
+                        <nav className="menu_header">
+                            <Link href="#Inicio" className="links" to="/">Inicio</Link>
+                            <Link href="#Consulta" className="links" to="/consultaAdm">Consulta</Link>
+                            <Link href="#Login" className="links" to="/login">Login</Link>
                         </nav>
-                        <img class="perfil" src={perfil} alt="perfil" />
+                        <img className="perfil" src={perfil} alt="perfil" />
                     </div>
                 </header>
                 <main>
-                    <section class="container_consulta">
+                    <section className="container_consulta">
                         <div>
-                            <div class="div_buscar">
-                                <p class="p_lista">Lista de Consultas</p>
+                            <div className="div_buscar">
+                                <p className="p_lista">Lista de Consultas</p>
                             </div>
                             <div>
                                 <table>
@@ -110,9 +110,9 @@ export default class ConsultaAdm extends Component {
                                         {this.state.listaConsultas.map((consulta) => {
                                             return (
                                                 <tr key={consulta.idConsulta}>
-                                                    <td>{consulta.idMedicoNavigation.nomeMedico}</td>
-                                                    <td>{consulta.idPacienteNavigatio.nomePaciente}</td>
-                                                    <td>{consulta.descricao}</td>
+                                                    <td className="td_listar">{consulta.idMedicoNavigation.idUsuarioNavigation.nomeUsuario}</td>
+                                                    <td className="td_listar">{consulta.idPacienteNavigatio.idUsuarioNavigation.nomeUsuario}</td>
+                                                    <td className="td_listar">{consulta.descricao}</td>
                                                     <td>{consulta.dataConsulta}</td>
                                                     <td>{consulta.idSituacaoConsultaNavigation.nomeSitucacao}</td>
                                                 </tr>
@@ -122,13 +122,12 @@ export default class ConsultaAdm extends Component {
                                 </table>
                             </div>
                         </div>
-                        <div class="div_margin">
-                            <div class="div_buscar">
-                                <p class="p_lista">Cadastrar Consulta</p>
+                        <div className="div_margin">
+                            <div className="div_buscar">
+                                <p className="p_lista">Cadastrar Consulta</p>
                             </div>
                             <div>
                                 <form>
-                                    <h2>Cadastro de Eventos</h2>
                                     <form onSubmit={this.cadastrarEvento}>
                                         <div
                                             style={{
@@ -165,9 +164,9 @@ export default class ConsultaAdm extends Component {
                                             />
 
                                             <input
-                                                type="date"
+                                                type="datetime-local"
                                                 name="dataEvento"
-                                                value={this.state.dataEvento}
+                                                value={this.state.dataConsulta}
                                                 onChange={this.atualizaStateCampo}
                                             />
 
@@ -193,22 +192,22 @@ export default class ConsultaAdm extends Component {
                                     </form>
                                 </form>
                             </div>
-                            <button class="botao_cadastrar_consulta" type="submit">Cadastrar</button>
+                            <button className="botao_cadastrar_consulta" type="submit">Cadastrar</button>
                         </div>
                     </section>
                 </main>
-                <footer class="footer_consulta">
-                    <div class="div_footer">
+                <footer className="footer_consulta">
+                    <div className="div_footer">
                         <div>
                             <h3>Links Úteis</h3>
-                            <p class="p_h3">- Central de Ajuda</p>
-                            <p class="p_h3">- Contato</p>
-                            <p class="p_h3">- Suporte</p>
+                            <p className="p_h3">- Central de Ajuda</p>
+                            <p className="p_h3">- Contato</p>
+                            <p className="p_h3">- Suporte</p>
                         </div>
                         <h4>SpMedical</h4>
-                        <div class="rede_social">
-                            <Link><img class="instagran" src={insta} alt="logo_instagran" /></Link>
-                            <p class="arroba">@sp_medical_gp</p>
+                        <div className="rede_social">
+                            <Link><img className="instagran" src={insta} alt="logo_instagran" /></Link>
+                            <p className="arroba">@sp_medical_gp</p>
                         </div>
                     </div>
                 </footer>

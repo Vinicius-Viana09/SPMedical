@@ -377,3 +377,7 @@ select{
     height: 20px;
     border-radius: 3px;
 }
+
+.td_listar{
+    color: #000000;
+}
